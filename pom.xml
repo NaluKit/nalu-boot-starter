@@ -26,7 +26,7 @@
   <properties>
     <domino.version>1.0-SNAPSHOT</domino.version>
     <domino.rest.version>1.0-rc.4-SNAPSHOT</domino.rest.version>
-    <gwt-editors.version>1.0-SNAPSHOT</gwt-editors.version>
+    <gwt-editor.version>1.0.0-RC1</gwt-editor.version>
     <nalu.version>2.1.0</nalu.version>
     <spring-boot.version>2.3.3.RELEASE</spring-boot.version>
 
