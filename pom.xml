@@ -15,39 +15,24 @@
   ~  the License.
   ~
   -->
-
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.github.nalukit</groupId>
-  <artifactId>gwt-boot-starter-nalu</artifactId>
-  <version>2.0.1</version>
+  <artifactId>nalu-boot-starter</artifactId>
+  <version>HEAD-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <name>GWT Bootstarter Nalu</name>
-  <description>GWT Bootstarter Nalu</description>
-
   <properties>
-    <!-- DominoUI version -->
     <domino.version>1.0-SNAPSHOT</domino.version>
     <domino.rest.version>1.0-rc.4-SNAPSHOT</domino.rest.version>
-
     <gwt-editors.version>1.0-SNAPSHOT</gwt-editors.version>
-
-    <javax.ws.rs-api.version>2.1.5</javax.ws.rs-api.version>
-    <!-- nalu version -->
-    <nalu.version>2.1.0-SNAPSHOT</nalu.version>
-
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
+    <nalu.version>2.1.0</nalu.version>
+    <spring-boot.version>2.3.3.RELEASE</spring-boot.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <!-- GWT BOM -->
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -57,10 +42,13 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+
       <dependency>
-        <groupId>javax.servlet</groupId>
-        <artifactId>javax.servlet-api</artifactId>
-        <version>3.1.0</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>${spring-boot.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -70,27 +58,22 @@
       <plugin>
         <groupId>net.ltgt.gwt.maven</groupId>
         <artifactId>gwt-maven-plugin</artifactId>
-        <version>1.0.0</version>
         <inherited>false</inherited>
         <configuration>
-          <launcherDir>${project.build.directory}/gwt/launcherDir</launcherDir>
+          <launcherDir>${basedir}/nalu-boot-starter-server/target/classes/launcherDir/</launcherDir>
         </configuration>
       </plugin>
     </plugins>
     <pluginManagement>
       <plugins>
         <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.5.1</version>
+          <version>3.8.1</version>
           <configuration>
             <source>1.8</source>
             <target>1.8</target>
           </configuration>
-        </plugin>
-        <plugin>
-          <groupId>org.eclipse.jetty</groupId>
-          <artifactId>jetty-maven-plugin</artifactId>
-          <version>9.4.8.v20171121</version>
         </plugin>
         <plugin>
           <groupId>net.ltgt.gwt.maven</groupId>
@@ -98,13 +81,14 @@
           <version>1.0.0</version>
           <extensions>true</extensions>
           <configuration>
-            <sourceLevel>${maven.compiler.source}</sourceLevel>
+            <sourceLevel>1.8</sourceLevel>
             <failOnError>true</failOnError>
           </configuration>
         </plugin>
         <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-source-plugin</artifactId>
-          <version>3.0.1</version>
+          <version>3.2.1</version>
           <executions>
             <execution>
               <id>attach-sources</id>
@@ -116,63 +100,180 @@
           </executions>
         </plugin>
         <plugin>
-          <groupId>org.apache.tomcat.maven</groupId>
-          <artifactId>tomcat7-maven-plugin</artifactId>
-          <version>2.2</version>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-maven-plugin</artifactId>
+          <version>${spring-boot.version}</version>
+          <configuration>
+            <skip>true</skip>
+          </configuration>
         </plugin>
       </plugins>
     </pluginManagement>
   </build>
-
-
-  <repositories>
-    <repository>
-      <id>vertispan-snapshots</id>
-      <name>Vertispan Snapshots</name>
-      <url>https://repo.vertispan.com/gwt-snapshot/</url>
-      <snapshots>
-        <enabled>true</enabled>
-        <!--<updatePolicy>always</updatePolicy>-->
-        <checksumPolicy>fail</checksumPolicy>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>vertispan-releases</id>
-      <name>Vertispan hosted artifacts-releases</name>
-      <url>https://repo.vertispan.com/j2cl</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>sonatype-snapshots-repo</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-      <snapshots>
-        <enabled>true</enabled>
-        <!--<updatePolicy>always</updatePolicy>-->
-        <checksumPolicy>fail</checksumPolicy>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>google-snapshots</id>
-      <name>google-snapshots</name>
-      <url>https://oss.sonatype.org/content/repositories/google-snapshots/</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
-
-
   <modules>
-    <module>gwt-boot-starter-nalu-shared</module>
-    <module>gwt-boot-starter-nalu-client</module>
-    <module>gwt-boot-starter-nalu-server</module>
+    <module>nalu-boot-starter-client</module>
+    <module>nalu-boot-starter-shared</module>
+    <module>nalu-boot-starter-server</module>
   </modules>
 </project>
+
+        <!--<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+        <!--         xmlns="http://maven.apache.org/POM/4.0.0"-->
+        <!--         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">-->
+
+        <!--  <modelVersion>4.0.0</modelVersion>-->
+
+        <!--  <groupId>com.github.nalukit</groupId>-->
+        <!--  <artifactId>gwt-boot-starter-nalu</artifactId>-->
+        <!--  <version>2.0.1</version>-->
+        <!--  <packaging>pom</packaging>-->
+
+        <!--  <name>GWT Bootstarter Nalu</name>-->
+        <!--  <description>GWT Bootstarter Nalu</description>-->
+
+        <!--  <properties>-->
+        <!--    &lt;!&ndash; DominoUI version &ndash;&gt;-->
+        <!--    <domino.version>1.0-SNAPSHOT</domino.version>-->
+        <!--    <domino.rest.version>1.0-rc.4-SNAPSHOT</domino.rest.version>-->
+
+        <!--    <gwt-editors.version>1.0-SNAPSHOT</gwt-editors.version>-->
+
+        <!--    <javax.ws.rs-api.version>2.1.5</javax.ws.rs-api.version>-->
+        <!--    &lt;!&ndash; nalu version &ndash;&gt;-->
+        <!--    <nalu.version>2.1.0-SNAPSHOT</nalu.version>-->
+
+        <!--    <maven.compiler.source>1.8</maven.compiler.source>-->
+        <!--    <maven.compiler.target>1.8</maven.compiler.target>-->
+
+        <!--    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
+        <!--  </properties>-->
+
+        <!--  &lt;!&ndash; GWT BOM &ndash;&gt;-->
+        <!--  <dependencyManagement>-->
+        <!--    <dependencies>-->
+        <!--      <dependency>-->
+        <!--        <groupId>com.google.gwt</groupId>-->
+        <!--        <artifactId>gwt</artifactId>-->
+        <!--        <version>2.9.0</version>-->
+        <!--        <type>pom</type>-->
+        <!--        <scope>import</scope>-->
+        <!--      </dependency>-->
+        <!--      <dependency>-->
+        <!--        <groupId>javax.servlet</groupId>-->
+        <!--        <artifactId>javax.servlet-api</artifactId>-->
+        <!--        <version>3.1.0</version>-->
+        <!--      </dependency>-->
+        <!--    </dependencies>-->
+        <!--  </dependencyManagement>-->
+
+        <!--  <build>-->
+        <!--    <plugins>-->
+        <!--      <plugin>-->
+        <!--        <groupId>net.ltgt.gwt.maven</groupId>-->
+        <!--        <artifactId>gwt-maven-plugin</artifactId>-->
+        <!--        <version>1.0.0</version>-->
+        <!--        <inherited>false</inherited>-->
+        <!--        <configuration>-->
+        <!--          <launcherDir>${project.build.directory}/gwt/launcherDir</launcherDir>-->
+        <!--        </configuration>-->
+        <!--      </plugin>-->
+        <!--    </plugins>-->
+        <!--    <pluginManagement>-->
+        <!--      <plugins>-->
+        <!--        <plugin>-->
+        <!--          <artifactId>maven-compiler-plugin</artifactId>-->
+        <!--          <version>3.5.1</version>-->
+        <!--          <configuration>-->
+        <!--            <source>1.8</source>-->
+        <!--            <target>1.8</target>-->
+        <!--          </configuration>-->
+        <!--        </plugin>-->
+        <!--        <plugin>-->
+        <!--          <groupId>org.eclipse.jetty</groupId>-->
+        <!--          <artifactId>jetty-maven-plugin</artifactId>-->
+        <!--          <version>9.4.8.v20171121</version>-->
+        <!--        </plugin>-->
+        <!--        <plugin>-->
+        <!--          <groupId>net.ltgt.gwt.maven</groupId>-->
+        <!--          <artifactId>gwt-maven-plugin</artifactId>-->
+        <!--          <version>1.0.0</version>-->
+        <!--          <extensions>true</extensions>-->
+        <!--          <configuration>-->
+        <!--            <sourceLevel>${maven.compiler.source}</sourceLevel>-->
+        <!--            <failOnError>true</failOnError>-->
+        <!--          </configuration>-->
+        <!--        </plugin>-->
+        <!--        <plugin>-->
+        <!--          <artifactId>maven-source-plugin</artifactId>-->
+        <!--          <version>3.0.1</version>-->
+        <!--          <executions>-->
+        <!--            <execution>-->
+        <!--              <id>attach-sources</id>-->
+        <!--              <phase>package</phase>-->
+        <!--              <goals>-->
+        <!--                <goal>jar-no-fork</goal>-->
+        <!--              </goals>-->
+        <!--            </execution>-->
+        <!--          </executions>-->
+        <!--        </plugin>-->
+        <!--        <plugin>-->
+        <!--          <groupId>org.apache.tomcat.maven</groupId>-->
+        <!--          <artifactId>tomcat7-maven-plugin</artifactId>-->
+        <!--          <version>2.2</version>-->
+        <!--        </plugin>-->
+        <!--      </plugins>-->
+        <!--    </pluginManagement>-->
+        <!--  </build>-->
+
+
+        <!--  <repositories>-->
+        <!--    <repository>-->
+        <!--      <id>vertispan-snapshots</id>-->
+        <!--      <name>Vertispan Snapshots</name>-->
+        <!--      <url>https://repo.vertispan.com/gwt-snapshot/</url>-->
+        <!--      <snapshots>-->
+        <!--        <enabled>true</enabled>-->
+        <!--        &lt;!&ndash;<updatePolicy>always</updatePolicy>&ndash;&gt;-->
+        <!--        <checksumPolicy>fail</checksumPolicy>-->
+        <!--      </snapshots>-->
+        <!--    </repository>-->
+        <!--    <repository>-->
+        <!--      <id>vertispan-releases</id>-->
+        <!--      <name>Vertispan hosted artifacts-releases</name>-->
+        <!--      <url>https://repo.vertispan.com/j2cl</url>-->
+        <!--      <releases>-->
+        <!--        <enabled>true</enabled>-->
+        <!--      </releases>-->
+        <!--      <snapshots>-->
+        <!--        <enabled>true</enabled>-->
+        <!--      </snapshots>-->
+        <!--    </repository>-->
+        <!--    <repository>-->
+        <!--      <id>sonatype-snapshots-repo</id>-->
+        <!--      <url>https://oss.sonatype.org/content/repositories/snapshots</url>-->
+        <!--      <snapshots>-->
+        <!--        <enabled>true</enabled>-->
+        <!--        &lt;!&ndash;<updatePolicy>always</updatePolicy>&ndash;&gt;-->
+        <!--        <checksumPolicy>fail</checksumPolicy>-->
+        <!--      </snapshots>-->
+        <!--    </repository>-->
+        <!--    <repository>-->
+        <!--      <id>google-snapshots</id>-->
+        <!--      <name>google-snapshots</name>-->
+        <!--      <url>https://oss.sonatype.org/content/repositories/google-snapshots/</url>-->
+        <!--      <releases>-->
+        <!--        <enabled>true</enabled>-->
+        <!--      </releases>-->
+        <!--      <snapshots>-->
+        <!--        <enabled>true</enabled>-->
+        <!--      </snapshots>-->
+        <!--    </repository>-->
+        <!--  </repositories>-->
+
+
+        <!--  <modules>-->
+        <!--    <module>gwt-boot-starter-nalu-shared</module>-->
+        <!--    <module>gwt-boot-starter-nalu-client</module>-->
+        <!--    <module>gwt-boot-starter-nalu-server</module>-->
+        <!--  </modules>-->
+        <!--</project>-->

@@ -1,3 +1,33 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Note
+this project was generated using the [gwt-maven-springboot-archetype](https://github.com/NaluKit/gwt-maven-springboot-archetype).
+
+
+
+---
+
+
+
+
+
+
+
 <a title="Gitter" href="https://gitter.im/Nalukit42/Lobby"><img src="https://badges.gitter.im/Join%20Chat.svg"></a>
 
 # Nalu Project Generator

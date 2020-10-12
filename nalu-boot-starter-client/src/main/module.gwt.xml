@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to = "app">
+  <inherits name="com.google.gwt.user.User" />
+
+  <!-- Other module inherits                                      -->
+  <inherits name="com.github.nalukit.nalu.Nalu"/>
+  <inherits name='com.github.nalukit.nalu.plugin.elemental2.NaluPluginElemental2'/>
+
+  <inherits name="org.dominokit.domino.ui.DominoUI"/>
+  <inherits name="org.dominokit.domino.rest.Rest"/>
+
+  <source path="client" />
+  <source path="shared" />
+
+  <entry-point class="com.github.nalukit.bootstarter.client.App" />
+
+  <!-- Only support recent browsers -->
+  <set-property name="user.agent" value="ie10,gecko1_8,safari" />
+</module>

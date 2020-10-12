@@ -90,7 +90,7 @@ Temporary Items
 ### Example user template
 
 # IntelliJ project files
-.idea
+../.idea
 out
 gen### Eclipse template
 
@@ -223,4 +223,4 @@ fabric.properties
 .idea/httpRequests
 target
 *.info
-**/target/*
+backup/gwt-boot-starter-nalu-client/target/generated-sources
