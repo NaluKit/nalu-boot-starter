@@ -33,8 +33,8 @@ public class AppContext
     this.naluGeneraterParms.setGroupId("com.example");
     this.naluGeneraterParms.setArtefactId("MyTestProject");
     this.naluGeneraterParms.setApplicationLoader(true);
-    this.naluGeneraterParms.setDebug(true);
-    this.naluGeneraterParms.setLoginScreen(true);
+    this.naluGeneraterParms.setLoggerSupport(true);
+    this.naluGeneraterParms.setLoginModule(true);
     this.naluGeneraterParms.setHashUrl(true);
     this.naluGeneraterParms.setTranspiler(DataConstants.GWT_VERSION_2_9_0);
     this.naluGeneraterParms.setServerImplementation(ServerImplementation.GWT_MAVEN_PLUGIN);

@@ -17,7 +17,7 @@
 
 package com.github.nalukit.bootstarternalu.server.generator.gwt;
 
-import com.github.nalukit.bootstarternalu.server.generator.GeneratorUtils;
+import com.github.nalukit.bootstarter.server.generator.GeneratorUtils;
 import com.github.nalukit.bootstarternalu.server.generator.gwt.impl.common.*;
 import com.github.nalukit.bootstarternalu.server.generator.gwt.impl.domino.*;
 import com.github.nalukit.bootstarternalu.server.generator.gwt.impl.elemento.*;
@@ -27,8 +27,8 @@ import com.github.nalukit.bootstarternalu.server.generator.gwt.impl.maven.multi.
 import com.github.nalukit.bootstarternalu.server.generator.gwt.impl.springboot.ApplicationPropertiesGwtSourceGenerator;
 import com.github.nalukit.bootstarternalu.server.generator.gwt.impl.springboot.SpringBootApplicationGwtSourceGenerator;
 import com.github.nalukit.bootstarternalu.shared.model.ControllerData;
-import com.github.nalukit.bootstarternalu.shared.model.GeneratorException;
-import com.github.nalukit.bootstarternalu.shared.model.NaluGeneraterParms;
+import com.github.nalukit.bootstarter.shared.model.GeneratorException;
+import com.github.nalukit.bootstarter.shared.model.NaluGeneraterParms;
 import com.github.nalukit.bootstarternalu.shared.model.ServerImplementation;
 
 import java.io.File;
@@ -160,7 +160,7 @@ public class GwtSourceGenerator {
                                          .generate();
     }
     // add filter in case login is requested
-    if (naluGeneraterParms.isLoginScreen()) {
+    if (naluGeneraterParms.isLoginModule()) {
       FilterGwtSourceGenerator.builder()
                               .naluGeneraterParms(this.naluGeneraterParms)
                               .clientPackageJavaConform(this.clientPackageJavaClientConform)
@@ -320,7 +320,7 @@ public class GwtSourceGenerator {
                                                          .build()
                                                          .generate();
     // generate login shell
-    if (this.naluGeneraterParms.isLoginScreen()) {
+    if (this.naluGeneraterParms.isLoginModule()) {
       ShellLoginDominoGwtSourceGenerator.builder()
                                         .naluGeneraterParms(this.naluGeneraterParms)
                                         .clientPackageJavaConform(clientPackageJavaConform)
@@ -375,7 +375,7 @@ public class GwtSourceGenerator {
     //                                                     .build()
     //                                                     .generate();
     // generate login shell
-    if (this.naluGeneraterParms.isLoginScreen()) {
+    if (this.naluGeneraterParms.isLoginModule()) {
       ShellLoginElementoGwtSourceGenerator.builder()
                                           .naluGeneraterParms(this.naluGeneraterParms)
                                           .clientPackageJavaConform(clientPackageJavaConform)
@@ -437,7 +437,7 @@ public class GwtSourceGenerator {
                                                    .build()
                                                    .generate();
     // generate login shell
-    if (this.naluGeneraterParms.isLoginScreen()) {
+    if (this.naluGeneraterParms.isLoginModule()) {
       ShellLoginGwtSourceGenerator.builder()
                                   .naluGeneraterParms(this.naluGeneraterParms)
                                   .clientPackageJavaConform(clientPackageJavaConform)
@@ -498,7 +498,7 @@ public class GwtSourceGenerator {
                                                          .build()
                                                          .generate();
     // generate login shell
-    if (this.naluGeneraterParms.isLoginScreen()) {
+    if (this.naluGeneraterParms.isLoginModule()) {
       ShellLoginGxtGwtSourceGenerator.builder()
                                      .naluGeneraterParms(this.naluGeneraterParms)
                                      .clientPackageJavaConform(clientPackageJavaConform)

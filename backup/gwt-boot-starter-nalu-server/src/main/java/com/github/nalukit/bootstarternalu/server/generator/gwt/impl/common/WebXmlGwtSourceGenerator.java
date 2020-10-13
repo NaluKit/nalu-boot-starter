@@ -16,8 +16,8 @@
 
 package com.github.nalukit.bootstarternalu.server.generator.gwt.impl.common;
 
-import com.github.nalukit.bootstarternalu.shared.model.GeneratorException;
-import com.github.nalukit.bootstarternalu.shared.model.NaluGeneraterParms;
+import com.github.nalukit.bootstarter.shared.model.GeneratorException;
+import com.github.nalukit.bootstarter.shared.model.NaluGeneraterParms;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;

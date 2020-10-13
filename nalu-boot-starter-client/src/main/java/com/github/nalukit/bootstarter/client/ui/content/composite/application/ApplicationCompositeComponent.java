@@ -34,8 +34,8 @@ public class ApplicationCompositeComponent
     implements IApplicationCompositeComponent {
   
   private CheckBox       cbApplicationLoader;
-  private CheckBox       cbDebugSupport;
-  private CheckBox       cbLoginScreen;
+  private CheckBox       cbLoggerSupport;
+  private CheckBox       cbLoginModule;
   private CheckBox       cbHashUrl;
   private FieldsGrouping grouping;
   
@@ -52,13 +52,13 @@ public class ApplicationCompositeComponent
                                        .filledIn()
                                        .styler(style -> style.setMarginBottom("0px"))
                                        .groupBy(this.grouping);
-    this.cbDebugSupport      = CheckBox.create("Generate Debug support (in development mode)")
+    this.cbLoggerSupport     = CheckBox.create("Generate Logger support")
                                        .check()
                                        .setColor(Color.BLUE_GREY)
                                        .filledIn()
                                        .styler(style -> style.setMarginBottom("0px"))
                                        .groupBy(this.grouping);
-    this.cbLoginScreen       = CheckBox.create("Generate Login screen and Login filter")
+    this.cbLoginModule       = CheckBox.create("Generate Login Module and Login filter")
                                        .check()
                                        .setColor(Color.BLUE_GREY)
                                        .filledIn()
@@ -82,11 +82,11 @@ public class ApplicationCompositeComponent
                                                                                                        .appendChild(this.cbApplicationLoader))
                                                                                     .appendChild(Column.span6()
                                                                                                        .condenced()
-                                                                                                       .appendChild(this.cbDebugSupport)))
+                                                                                                       .appendChild(this.cbLoggerSupport)))
                                                                     .appendChild(Row.create()
                                                                                     .appendChild(Column.span6()
                                                                                                        .condenced()
-                                                                                                       .appendChild(this.cbLoginScreen))
+                                                                                                       .appendChild(this.cbLoginModule))
                                                                                     .appendChild(Column.span6()
                                                                                                        .condenced()
                                                                                                        .appendChild(this.cbHashUrl))))
@@ -98,16 +98,16 @@ public class ApplicationCompositeComponent
   @Override
   public void edit(NaluGeneraterParms naluGeneraterParms) {
     this.cbApplicationLoader.setValue(naluGeneraterParms.isApplicationLoader());
-    this.cbDebugSupport.setValue(naluGeneraterParms.isDebug());
-    this.cbLoginScreen.setValue(naluGeneraterParms.isLoginScreen());
+    this.cbLoggerSupport.setValue(naluGeneraterParms.isLoggerSupport());
+    this.cbLoginModule.setValue(naluGeneraterParms.isLoginModule());
     this.cbHashUrl.setValue(naluGeneraterParms.isHashUrl());
   }
   
   @Override
   public NaluGeneraterParms flush(NaluGeneraterParms naluGeneraterParms) {
     naluGeneraterParms.setApplicationLoader(cbApplicationLoader.getValue());
-    naluGeneraterParms.setDebug(cbDebugSupport.getValue());
-    naluGeneraterParms.setLoginScreen(cbLoginScreen.getValue());
+    naluGeneraterParms.setLoggerSupport(cbLoggerSupport.getValue());
+    naluGeneraterParms.setLoginModule(cbLoginModule.getValue());
     naluGeneraterParms.setHashUrl(cbHashUrl.getValue());
     return naluGeneraterParms;
   }

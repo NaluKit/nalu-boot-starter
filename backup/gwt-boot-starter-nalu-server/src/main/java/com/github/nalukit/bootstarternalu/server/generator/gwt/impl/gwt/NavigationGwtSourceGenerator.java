@@ -18,7 +18,7 @@
 package com.github.nalukit.bootstarternalu.server.generator.gwt.impl.gwt;
 
 import com.github.nalukit.bootstarternalu.server.generator.gwt.impl.AbstractNavigationGwtSourceGenerator;
-import com.github.nalukit.bootstarternalu.shared.model.NaluGeneraterParms;
+import com.github.nalukit.bootstarter.shared.model.NaluGeneraterParms;
 import com.google.gwt.dom.client.Style;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;

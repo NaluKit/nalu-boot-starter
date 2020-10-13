@@ -17,9 +17,9 @@
 
 package com.github.nalukit.bootstarternalu.server.generator.gwt.impl.gxt;
 
-import com.github.nalukit.bootstarternalu.server.generator.GeneratorUtils;
+import com.github.nalukit.bootstarter.server.generator.GeneratorUtils;
 import com.github.nalukit.bootstarternalu.server.generator.gwt.impl.AbstractShellApplicationGwtSourceGenerator;
-import com.github.nalukit.bootstarternalu.shared.model.NaluGeneraterParms;
+import com.github.nalukit.bootstarter.shared.model.NaluGeneraterParms;
 import com.github.nalukit.nalu.client.component.IsShell.ShellLoader;
 import com.github.nalukit.nalu.client.component.annotation.Shell;
 import com.github.nalukit.nalu.plugin.gwt.client.annotation.Selector;

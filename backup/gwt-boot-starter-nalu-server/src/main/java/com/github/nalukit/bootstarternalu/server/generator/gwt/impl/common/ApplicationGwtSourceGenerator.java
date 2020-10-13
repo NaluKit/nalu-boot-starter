@@ -16,12 +16,12 @@
 
 package com.github.nalukit.bootstarternalu.server.generator.gwt.impl.common;
 
-import com.github.nalukit.bootstarternalu.server.generator.GeneratorConstants;
-import com.github.nalukit.bootstarternalu.server.generator.GeneratorUtils;
-import com.github.nalukit.bootstarternalu.server.generator.gwt.impl.AbstractGwtSourceGenerator;
+import com.github.nalukit.bootstarter.server.generator.GeneratorConstants;
+import com.github.nalukit.bootstarter.server.generator.GeneratorUtils;
+import com.github.nalukit.bootstarter.server.generator.gwt.impl.AbstractGwtSourceGenerator;
 import com.github.nalukit.bootstarternalu.shared.model.ControllerData;
-import com.github.nalukit.bootstarternalu.shared.model.GeneratorException;
-import com.github.nalukit.bootstarternalu.shared.model.NaluGeneraterParms;
+import com.github.nalukit.bootstarter.shared.model.GeneratorException;
+import com.github.nalukit.bootstarter.shared.model.NaluGeneraterParms;
 import com.github.nalukit.nalu.client.application.IsApplication;
 import com.github.nalukit.nalu.client.application.annotation.Application;
 import com.github.nalukit.nalu.client.application.annotation.Debug;
@@ -58,7 +58,7 @@ public class ApplicationGwtSourceGenerator
                                                                             GeneratorUtils.setFirstCharacterToUpperCase(this.naluGeneraterParms.getArtefactId()) + GeneratorConstants.CONTEXT + ".class")
                                                                  .addMember("startRoute",
                                                                             "$S",
-                                                                            this.naluGeneraterParms.isLoginScreen() ? "/login/login" : getStartRoute());
+                                                                            this.naluGeneraterParms.isLoginModule() ? "/login/login" : getStartRoute());
     
     if (this.naluGeneraterParms.isApplicationLoader()) {
       applicationAnnotation.addMember("loader",
@@ -90,7 +90,7 @@ public class ApplicationGwtSourceGenerator
                                            .build());
     }
     // add filter in case login screen is requested
-    if (naluGeneraterParms.isLoginScreen()) {
+    if (naluGeneraterParms.isLoginModule()) {
       typeSpec.addAnnotation(AnnotationSpec.builder(Filters.class)
                                            .addMember("filterClasses",
                                                       "$T.class",

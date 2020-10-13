@@ -18,7 +18,7 @@ package com.github.nalukit.bootstarternalu.server.generator.gwt.impl.gwt;
 
 import com.github.nalukit.bootstarternalu.server.generator.gwt.impl.AbstractPopupErrorControllerComponentGwtSourceGenerator;
 import com.github.nalukit.bootstarternalu.shared.model.ControllerData;
-import com.github.nalukit.bootstarternalu.shared.model.NaluGeneraterParms;
+import com.github.nalukit.bootstarter.shared.model.NaluGeneraterParms;
 import com.github.nalukit.nalu.client.event.model.ErrorInfo.ErrorType;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.dom.client.Style.TextAlign;

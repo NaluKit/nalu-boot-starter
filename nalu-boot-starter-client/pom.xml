@@ -91,6 +91,7 @@
         <configuration>
           <moduleName>com.github.nalukit.bootstarter.App</moduleName>
           <moduleShortName>app</moduleShortName>
+          <localWorkers>4</localWorkers>
         </configuration>
       </plugin>
     </plugins>

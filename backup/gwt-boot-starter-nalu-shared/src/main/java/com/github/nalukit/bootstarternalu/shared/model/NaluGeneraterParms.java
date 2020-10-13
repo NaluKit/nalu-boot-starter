@@ -80,7 +80,7 @@ public class NaluGeneraterParms {
     this.debug = debug;
   }
   
-  public boolean isLoginScreen() {
+  public boolean isLoginModule() {
     return loginScreen;
   }
   

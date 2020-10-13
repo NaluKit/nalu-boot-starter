@@ -18,7 +18,7 @@
 package com.github.nalukit.bootstarternalu.server.generator.gwt.impl.gxt;
 
 import com.github.nalukit.bootstarternalu.server.generator.gwt.impl.AbstractNavigationGwtSourceGenerator;
-import com.github.nalukit.bootstarternalu.shared.model.NaluGeneraterParms;
+import com.github.nalukit.bootstarter.shared.model.NaluGeneraterParms;
 import com.sencha.gxt.core.client.util.Margins;
 import com.sencha.gxt.widget.core.client.button.TextButton;
 import com.sencha.gxt.widget.core.client.container.VerticalLayoutContainer;

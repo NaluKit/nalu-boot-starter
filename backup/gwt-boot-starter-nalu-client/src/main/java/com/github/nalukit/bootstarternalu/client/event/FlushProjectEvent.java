@@ -1,6 +1,6 @@
 package com.github.nalukit.bootstarternalu.client.event;
 
-import com.github.nalukit.bootstarternalu.shared.model.NaluGeneraterParms;
+import com.github.nalukit.bootstarter.shared.model.NaluGeneraterParms;
 import org.gwtproject.event.shared.Event;
 
 public class FlushProjectEvent

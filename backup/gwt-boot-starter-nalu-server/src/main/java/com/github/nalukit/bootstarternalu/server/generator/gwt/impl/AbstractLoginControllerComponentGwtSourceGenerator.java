@@ -16,10 +16,10 @@
 
 package com.github.nalukit.bootstarternalu.server.generator.gwt.impl;
 
-import com.github.nalukit.bootstarternalu.server.generator.GeneratorConstants;
-import com.github.nalukit.bootstarternalu.server.generator.GeneratorUtils;
+import com.github.nalukit.bootstarter.server.generator.GeneratorConstants;
+import com.github.nalukit.bootstarter.server.generator.GeneratorUtils;
 import com.github.nalukit.bootstarternalu.shared.model.ControllerData;
-import com.github.nalukit.bootstarternalu.shared.model.GeneratorException;
+import com.github.nalukit.bootstarter.shared.model.GeneratorException;
 import com.github.nalukit.nalu.client.component.AbstractComponent;
 import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.IsComponent;

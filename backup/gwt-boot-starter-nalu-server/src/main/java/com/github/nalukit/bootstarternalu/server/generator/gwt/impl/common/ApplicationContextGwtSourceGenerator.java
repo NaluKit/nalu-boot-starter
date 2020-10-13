@@ -16,11 +16,11 @@
 
 package com.github.nalukit.bootstarternalu.server.generator.gwt.impl.common;
 
-import com.github.nalukit.bootstarternalu.server.generator.GeneratorConstants;
-import com.github.nalukit.bootstarternalu.server.generator.GeneratorUtils;
-import com.github.nalukit.bootstarternalu.server.generator.gwt.impl.AbstractGwtSourceGenerator;
-import com.github.nalukit.bootstarternalu.shared.model.GeneratorException;
-import com.github.nalukit.bootstarternalu.shared.model.NaluGeneraterParms;
+import com.github.nalukit.bootstarter.server.generator.GeneratorConstants;
+import com.github.nalukit.bootstarter.server.generator.GeneratorUtils;
+import com.github.nalukit.bootstarter.server.generator.gwt.impl.AbstractGwtSourceGenerator;
+import com.github.nalukit.bootstarter.shared.model.GeneratorException;
+import com.github.nalukit.bootstarter.shared.model.NaluGeneraterParms;
 import com.github.nalukit.nalu.client.context.IsContext;
 import com.squareup.javapoet.*;
 
@@ -57,7 +57,7 @@ public class ApplicationContextGwtSourceGenerator
                                                              .addComment("enter your constructor code here ...")
                                                              .build());
     
-    if (this.naluGeneraterParms.isLoginScreen()) {
+    if (this.naluGeneraterParms.isLoginModule()) {
       typeSpec.addField(FieldSpec.builder(boolean.class,
                                           "loggedIn")
                                  .addModifiers(Modifier.PRIVATE)

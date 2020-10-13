@@ -19,7 +19,7 @@ package com.github.nalukit.bootstarternalu.client.ui.content.composite.screen;
 
 import com.github.nalukit.bootstarternalu.client.ui.content.composite.screen.IScreenCompositeComponent.Controller;
 import com.github.nalukit.bootstarternalu.shared.model.ControllerData;
-import com.github.nalukit.bootstarternalu.shared.model.NaluGeneraterParms;
+import com.github.nalukit.bootstarter.shared.model.NaluGeneraterParms;
 import com.github.nalukit.nalu.client.component.AbstractCompositeComponent;
 import elemental2.dom.HTMLDivElement;
 import elemental2.dom.HTMLElement;

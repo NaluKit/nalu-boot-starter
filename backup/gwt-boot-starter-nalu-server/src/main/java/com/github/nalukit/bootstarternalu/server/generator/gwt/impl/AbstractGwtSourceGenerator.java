@@ -17,7 +17,7 @@
 
 package com.github.nalukit.bootstarternalu.server.generator.gwt.impl;
 
-import com.github.nalukit.bootstarternalu.shared.model.NaluGeneraterParms;
+import com.github.nalukit.bootstarter.shared.model.NaluGeneraterParms;
 import com.google.gwt.user.client.ui.Widget;
 import com.squareup.javapoet.ClassName;
 import elemental2.dom.HTMLElement;

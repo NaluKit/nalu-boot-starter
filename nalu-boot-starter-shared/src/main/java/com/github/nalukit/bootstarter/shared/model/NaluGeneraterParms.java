@@ -28,9 +28,9 @@ public class NaluGeneraterParms {
   private String               groupId;
   private String               artefactId;
   private String               transpiler;
-  private boolean              applicationLoader;
-  private boolean              debug;
-  private boolean              loginScreen;
+  private boolean applicationLoader;
+  private boolean loggerSupport;
+  private boolean loginModule;
   private boolean              hashUrl;
   private WidgetLibrary        widgetLibrary;
   private ServerImplementation serverImplementation;
@@ -72,20 +72,20 @@ public class NaluGeneraterParms {
     this.applicationLoader = applicationLoader;
   }
   
-  public boolean isDebug() {
-    return debug;
+  public boolean isLoggerSupport() {
+    return loggerSupport;
   }
   
-  public void setDebug(boolean debug) {
-    this.debug = debug;
+  public void setLoggerSupport(boolean loggerSupport) {
+    this.loggerSupport = loggerSupport;
   }
   
-  public boolean isLoginScreen() {
-    return loginScreen;
+  public boolean isLoginModule() {
+    return loginModule;
   }
   
-  public void setLoginScreen(boolean loginScreen) {
-    this.loginScreen = loginScreen;
+  public void setLoginModule(boolean loginModule) {
+    this.loginModule = loginModule;
   }
   
   public boolean isHashUrl() {

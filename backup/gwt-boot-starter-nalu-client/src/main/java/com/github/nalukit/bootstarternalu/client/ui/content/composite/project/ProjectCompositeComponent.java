@@ -21,7 +21,7 @@ import com.github.nalukit.bootstarternalu.client.ui.content.composite.project.IP
 import com.github.nalukit.bootstarternalu.client.ui.content.composite.project.validation.ClassNameValidator;
 import com.github.nalukit.bootstarternalu.client.ui.content.composite.project.validation.PackageValidator;
 import com.github.nalukit.bootstarternalu.shared.model.DataConstants;
-import com.github.nalukit.bootstarternalu.shared.model.NaluGeneraterParms;
+import com.github.nalukit.bootstarter.shared.model.NaluGeneraterParms;
 import com.github.nalukit.bootstarternalu.shared.model.ServerImplementation;
 import com.github.nalukit.bootstarternalu.shared.model.WidgetLibrary;
 import com.github.nalukit.nalu.client.component.AbstractCompositeComponent;

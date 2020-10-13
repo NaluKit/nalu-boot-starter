@@ -18,7 +18,7 @@
 package com.github.nalukit.bootstarternalu.client.ui.content.composite.application;
 
 import com.github.nalukit.bootstarternalu.client.ui.content.composite.application.IApplicationCompositeComponent.Controller;
-import com.github.nalukit.bootstarternalu.shared.model.NaluGeneraterParms;
+import com.github.nalukit.bootstarter.shared.model.NaluGeneraterParms;
 import com.github.nalukit.nalu.client.component.AbstractCompositeComponent;
 import elemental2.dom.HTMLDivElement;
 import elemental2.dom.HTMLElement;
@@ -100,7 +100,7 @@ public class ApplicationCompositeComponent
   public void edit(NaluGeneraterParms naluGeneraterParms) {
     this.cbApplicationLoader.setValue(naluGeneraterParms.isApplicationLoader());
     this.cbDebugSupport.setValue(naluGeneraterParms.isDebug());
-    this.cbLoginScreen.setValue(naluGeneraterParms.isLoginScreen());
+    this.cbLoginScreen.setValue(naluGeneraterParms.isLoginModule());
     this.cbHashUrl.setValue(naluGeneraterParms.isHashUrl());
   }
   

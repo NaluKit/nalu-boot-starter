@@ -17,9 +17,9 @@
 
 package com.github.nalukit.bootstarternalu.server.generator.gwt.impl.springboot;
 
-import com.github.nalukit.bootstarternalu.server.generator.GeneratorConstants;
-import com.github.nalukit.bootstarternalu.server.generator.gwt.impl.AbstractGwtSourceGenerator;
-import com.github.nalukit.bootstarternalu.shared.model.GeneratorException;
+import com.github.nalukit.bootstarter.server.generator.GeneratorConstants;
+import com.github.nalukit.bootstarter.server.generator.gwt.impl.AbstractGwtSourceGenerator;
+import com.github.nalukit.bootstarter.shared.model.GeneratorException;
 import com.squareup.javapoet.CodeBlock;
 import com.squareup.javapoet.JavaFile;
 import com.squareup.javapoet.MethodSpec;

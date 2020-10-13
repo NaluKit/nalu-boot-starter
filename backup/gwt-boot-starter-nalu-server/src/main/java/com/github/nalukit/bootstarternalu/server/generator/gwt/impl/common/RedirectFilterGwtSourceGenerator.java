@@ -16,10 +16,10 @@
 
 package com.github.nalukit.bootstarternalu.server.generator.gwt.impl.common;
 
-import com.github.nalukit.bootstarternalu.server.generator.GeneratorConstants;
-import com.github.nalukit.bootstarternalu.server.generator.gwt.impl.AbstractGwtSourceGenerator;
-import com.github.nalukit.bootstarternalu.shared.model.GeneratorException;
-import com.github.nalukit.bootstarternalu.shared.model.NaluGeneraterParms;
+import com.github.nalukit.bootstarter.server.generator.GeneratorConstants;
+import com.github.nalukit.bootstarter.server.generator.gwt.impl.AbstractGwtSourceGenerator;
+import com.github.nalukit.bootstarter.shared.model.GeneratorException;
+import com.github.nalukit.bootstarter.shared.model.NaluGeneraterParms;
 import com.squareup.javapoet.*;
 
 import javax.lang.model.element.Modifier;

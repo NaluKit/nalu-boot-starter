@@ -17,7 +17,7 @@
 
 package com.github.nalukit.bootstarternalu.client.service;
 
-import com.github.nalukit.bootstarternalu.shared.model.NaluGeneraterParms;
+import com.github.nalukit.bootstarter.shared.model.NaluGeneraterParms;
 import org.dominokit.domino.rest.shared.request.service.annotations.RequestBody;
 import org.dominokit.domino.rest.shared.request.service.annotations.RequestFactory;
 

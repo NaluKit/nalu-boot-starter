@@ -17,13 +17,13 @@
 
 package com.github.nalukit.bootstarternalu.server.resource.impl;
 
-import com.github.nalukit.bootstarternalu.server.generator.GeneratorUtils;
+import com.github.nalukit.bootstarter.server.generator.GeneratorUtils;
 import com.github.nalukit.bootstarternalu.server.generator.gwt.GwtSourceGenerator;
 import com.github.nalukit.bootstarternalu.server.generator.gwt.impl.common.ModuleGwtDescriptorGenerator;
 import com.github.nalukit.bootstarternalu.server.generator.gwt.impl.maven.multi.MultiPomGwtGenerator;
 import com.github.nalukit.bootstarternalu.shared.model.DataConstants;
-import com.github.nalukit.bootstarternalu.shared.model.GeneratorException;
-import com.github.nalukit.bootstarternalu.shared.model.NaluGeneraterParms;
+import com.github.nalukit.bootstarter.shared.model.GeneratorException;
+import com.github.nalukit.bootstarter.shared.model.NaluGeneraterParms;
 import com.github.nalukit.bootstarternalu.shared.transport.response.GenerateResponse;
 import com.github.nalukit.bootstarternalu.shared.transport.response.Status;
 import org.slf4j.Logger;

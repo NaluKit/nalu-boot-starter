@@ -18,7 +18,7 @@
 package com.github.nalukit.bootstarternalu.server.generator.gwt.impl.elemento;
 
 import com.github.nalukit.bootstarternalu.server.generator.gwt.impl.AbstractShellApplicationGwtSourceGenerator;
-import com.github.nalukit.bootstarternalu.shared.model.NaluGeneraterParms;
+import com.github.nalukit.bootstarter.shared.model.NaluGeneraterParms;
 import com.github.nalukit.nalu.client.component.annotation.Shell;
 import com.squareup.javapoet.*;
 import elemental2.dom.DomGlobal;
